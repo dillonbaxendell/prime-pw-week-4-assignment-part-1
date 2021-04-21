@@ -56,16 +56,42 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-function getLast( array ) {
 
+let favColors = [ 'Blue', 'Olive Green', 'Maroon', 'Yellow', 'Teal'];
+let emptyArray = [];
+
+function getLast( array ) {
+  if (array.length > 0) {
+    return array.slice(-1);
+  }
+  else {
+    return 'undefined';
+  }
 }
+
+console.log( getLast(favColors) );
+console.log( getLast(emptyArray) );
+
+//A note-to-self: the .slice method doesn't modify the array. It lists the index
+//up to a the number in the slice. i.e. .slice(2) would return 'Blue', 'Olive Green'
+// a negative number starts from the end of the array and returns those.
+//i.e. .slice(-2) would return 'Yellow', 'Teal'
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-
+  for (var i = 0; i < array.length; i++) {
+    if (value === array[i]) {
+      return true;
+    }
+  }
+  if (value != array[i]) {
+    return false;
+  }
 }
+
+console.log( find( 'Olive Green', favColors ));
 
 // ----------------------
 // Stretch Goals
