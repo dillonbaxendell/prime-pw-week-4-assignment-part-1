@@ -120,7 +120,7 @@ let someMath = [ 1, 5, 6, 100, 45, 5.3 ];
 function sumAll( array ) {
   let sum = 0;
     // TODO: loop to add items
-  for (var i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     sum += array[i];
   }
   return sum;
@@ -136,15 +136,32 @@ console.log(`The sum of the someMath is: ${sumAll( someMath )}` );
 let inputArray = [ 1, 2, -5, 0, -1.1, 3, -6 ];
 
 function allPositives( array ) {
-  for (var i = 0; i < array.length; i++) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
     if (array[i] > 0) {
-      let outputArray = array.push(i);
+      newArray.push( array[i] );
     }
-  } return array;
+  }
+  console.log( newArray );
 }
 
+console.log(`Below are the positive numbers of inputArray: `);
 allPositives( inputArray );
 
-// 11. Pick a problem from Edabit(https://edabit.com/) or
-//     CodeWars(https://www.codewars.com/). Then describe it
-//     here in a comment, write the function, and test it!
+// // 11. Pick a problem from Edabit(https://edabit.com/) or
+// //     CodeWars(https://www.codewars.com/). Then describe it
+// //     here in a comment, write the function, and test it!
+
+// You are counting points for a basketball game, given the amount of 2-pointers
+// scored and 3-pointers scored, find the final points for the team and return
+// that value.
+
+
+function gameScore( twoPointers, threePointers ) {
+  console.log( 'In function gameScore' );
+  let finalPoints = (twoPointers * 2) + (threePointers * 3);
+  console.log( finalPoints );
+}
+
+console.log( 'The final points for the basketball team:' );
+gameScore( 5, 8 );
