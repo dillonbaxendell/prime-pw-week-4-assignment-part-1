@@ -159,9 +159,14 @@ allPositives( inputArray );
 
 function gameScore( twoPointers, threePointers ) {
   console.log( 'In function gameScore' );
-  let finalPoints = (twoPointers * 2) + (threePointers * 3);
-  console.log( finalPoints );
+  return twoPointers * 2 + threePointers * 3;
 }
 
-console.log( 'The final points for the basketball team:' );
-gameScore( 5, 8 );
+//Write a function that returns the string "something" joined with a space " "
+//and the given argument a.
+
+function giveMeSomething( a ) {
+  return 'Something' + ' ' + a;
+}
+
+console.log( giveMeSomething( 'is better than nothing.' ) );
